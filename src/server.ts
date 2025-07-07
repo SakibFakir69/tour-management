@@ -5,7 +5,7 @@ import app from "./app";
 import { envVars } from "./app/modules/config/env";
 
 let server: Server;
-
+let x;
 const startServer = async () => {
   try {
     await mongoose.connect(

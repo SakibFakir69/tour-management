@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 
 dotenv.config();
-// df
+
 interface Envconfig {
   PORT: string;
   DB_URL: string;
