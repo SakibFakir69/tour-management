@@ -3,9 +3,10 @@ import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import app from "./app";
 import { envVars } from "./app/modules/config/env";
+import { seedSuperAdmin } from "./app/utils/seedSuperAdmin";
 
 let server: Server;
-let x;
+
 const startServer = async () => {
   try {
     await mongoose.connect(
@@ -24,7 +25,15 @@ const startServer = async () => {
   }
 };
 
-startServer();
+
+
+(async ()=>{
+  await startServer();
+  await seedSuperAdmin();
+
+
+})();
+
 // sdlc -> requment
 // manuly shout down
 // process.on("SIGINT", (error) => {
